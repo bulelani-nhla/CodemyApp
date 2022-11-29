@@ -1,8 +1,12 @@
- <!DOCTYPE html>
+
+{% extends 'base.html' %}
 <html>
 <head>
-<title>Error page</title>
+{% block title%}
+<title>Error</title>
+{% endblock %}
 </head>
+{% block content %}
 <body>
 <center>
 <h1>500 Internal Server Error</h1>
@@ -10,3 +14,4 @@
 </center>
 </body>
 </html> 
+{% endblock%}
