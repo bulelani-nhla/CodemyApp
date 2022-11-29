@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block section %}
+
+<html>
+<head>
+	<title> Information Page </title>
+</head>
+	<body style="background-color: white">
+		<center><u><h1>Uploaded Information</h1></u>
+		<table border = 1>
+			{% for k, v in data.items() %}
+				<tr>
+					<th>{{ k }}</th>
+					<td>{{ v }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+		<p><h3> Information Uploaded Successfully </h3></p>
+		<p><a href="/home"> Back to Survey Form </a></p>
+		</center>
+	</body>
+	
+{% endblock %}
