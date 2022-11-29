@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Home page</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<hr>
+<p>My faviroute car is a {{ the_car|upper }}</p>
+{{ brands|upper }}
+<br>
+<hr>
+{% for list in brands %}
+	{{ list }}<br> 
+{% endfor %}
+<br>
+<hr>
+{{ brands.1 }}
+<br>
+<hr>
+{{ brands.3 + 2300 }}
+<br>
+<hr>
+{% for list in brands %}
+	{% if list == 20000 %}
+		{{ list + 40000 }}<br>
+	{% else %}
+		{{ list }}<br>
+	{% endif %}	
+{% endfor %}
+
+</body>
+</html> 
