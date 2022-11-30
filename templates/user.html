@@ -1,12 +1,12 @@
- <!DOCTYPE html>
-<html>
-<head>
+{% extends 'base.html' %}
+{% block title%}
 <title>User</title>
-</head>
+{% endblock %}
+{% block content %}
 <body>
 
 <h1>Print out {{ user_name|upper }}</h1>
 
 
 </body>
-</html> 
+{% endblock %}

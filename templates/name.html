@@ -1,23 +1,30 @@
 {% extends 'base.html' %}
-{% block section %}
-
-<html>
-<head>
-	<title> Information Page </title>
-</head>
-	<body style="background-color: white">
-		<center><u><h1>Uploaded Information</h1></u>
-		<table border = 1>
-			{% for k, v in data.items() %}
-				<tr>
-					<th>{{ k }}</th>
-					<td>{{ v }}</td>
-				</tr>
-			{% endfor %}
-		</table>
-		<p><h3> Information Uploaded Successfully </h3></p>
-		<p><a href="/home"> Back to Survey Form </a></p>
-		</center>
-	</body>
+{% block title%}
+<title>Name Page</title>
+{% endblock %}
+{% block content %}
+<body>
+	{% for message in get_flashed_messages() %}
+		
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+		Hi {{ name }} {{ message }}
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	{% endfor %}
 	
+	{% if name %}
+		<h1>Hello {{ name }}!!</h1>
+	{% else %}
+		<h1>Name Page</h1>
+		<br>
+		<form method="POST">
+			{{ form.hidden_tag() }}
+			{{ form.name.label(class="form-label") }}
+			{{ form.name(class="form-control") }}
+			<br>
+			{{ form.submit(class="btn btn-secondary") }}
+		</form>
+	{% endif %}
+	
+</body>
 {% endblock %}
